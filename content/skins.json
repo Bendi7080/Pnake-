@@ -1,0 +1,16 @@
+{
+    "skins": [
+        {
+            "id": "white",
+            "name": "Белый Лотос",
+            "cost": 0,
+            "color": "#FFFFFF"
+        },
+        {
+            "id": "gold",
+            "name": "Золотой Лотос",
+            "cost": 100,
+            "color": "#FFD700"
+        }
+    ]
+}
