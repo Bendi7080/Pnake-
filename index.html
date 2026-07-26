@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pnake — Магическая Змейка</title>
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/ui.css">
+</head>
+<body>
+    <div id="app">
+        <div id="screen-loading" class="screen active">
+            <div class="panel">
+                <div class="logo-title">🪷 Pnake</div>
+                <p class="loading-text">Загрузка лотосового сада...</p>
+            </div>
+        </div>
+
+        <div id="screen-auth" class="screen">
+            <div class="panel">
+                <h2 class="panel-title">Вход в Pnake</h2>
+                <div class="auth-tabs">
+                    <button id="tab-login" class="btn-tab active">Вход</button>
+                    <button id="tab-register" class="btn-tab">Регистрация</button>
+                </div>
+                
+                <form id="form-auth" class="auth-form">
+                    <input type="text" id="input-username" placeholder="Имя игрока (ник)" required autocomplete="off">
+                    <input type="password" id="input-password" placeholder="Пароль" required>
+                    <input type="password" id="input-password-confirm" placeholder="Повторите пароль" style="display: none;">
+                    
+                    <p id="auth-error" class="error-message"></p>
+                    
+                    <button type="submit" id="btn-auth-submit" class="btn-primary">Войти</button>
+                </form>
+                
+                <div class="auth-divider">или</div>
+                <button id="btn-guest" class="btn-secondary">Играть как Гость</button>
+                <p class="warning-text">Прогресс гостя хранится только на этом устройстве.</p>
+            </div>
+        </div>
+
+        <div id="screen-main" class="screen">
+            <header class="top-bar" style="position: absolute; top: 15px; left: 15px; right: 15px; display: flex; justify-content: space-between; align-items: center;">
+                <div class="player-info" style="display: flex; align-items: center; gap: 10px;">
+                    <div class="avatar" id="menu-avatar" style="width: 40px; height: 40px; background: var(--color-lotus); border-radius: 50%;"></div>
+                    <div class="player-details" style="display: flex; flex-direction: column;">
+                        <span id="menu-nickname" class="nickname" style="font-weight: bold;">Игрок</span>
+                        <span id="menu-title" class="title" style="font-size: 0.8rem; color: #666;">Новичок</span>
+                    </div>
+                </div>
+                <div class="currency" style="background: white; padding: 5px 12px; border-radius: 20px; box-shadow: var(--shadow-soft);">
+                    <span class="pniv-icon">🌸</span>
+                    <span id="menu-pnivs">0</span>
+                </div>
+            </header>
+            
+            <div class="menu-grid">
+                <button id="btn-play" class="btn-menu large">🐍 Играть</button>
+                <button id="btn-shop" class="btn-menu">🛒 Магазин</button>
+                <button id="btn-profile" class="btn-menu">👤 Профиль</button>
+                <button id="btn-quests" class="btn-menu">🎯 Задания</button>
+                <button id="btn-achievements" class="btn-menu">🏆 Достижения</button>
+                <button id="btn-rewards" class="btn-menu">🎁 Награды</button>
+                <button id="btn-collections" class="btn-menu">📖 Коллекции</button>
+                <button id="btn-settings" class="btn-menu">⚙ Настройки</button>
+            </div>
+        </div>
+
+        <div id="screen-game" class="screen">
+            <div class="game-hud" style="position: absolute; top: 20px; display: flex; justify-content: space-between; width: 90%; max-width: 400px; align-items: center;">
+                <div class="score-board" style="font-size: 1.2rem; font-weight: bold;">
+                    Очки: <span id="game-score">0</span>
+                </div>
+                <button id="btn-pause" class="btn-icon" style="padding: 5px 10px; border-radius: 5px; background: white; border: none;">⏸</button>
+            </div>
+            
+            <div class="canvas-container" style="margin: 40px 0;">
+                <canvas id="game-canvas" style="background: #fff; border-radius: 12px; box-shadow: var(--shadow-soft); display: block;"></canvas>
+            </div>
+
+            <div id="mobile-controls" class="controls" style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                <button class="btn-dir up" id="btn-up" style="width: 60px; height: 50px; background: var(--color-white); border-radius: 8px; font-size: 1.2rem; box-shadow: var(--shadow-soft);">▲</button>
+                <div class="controls-row" style="display: flex; gap: 10px;">
+                    <button class="btn-dir left" id="btn-left" style="width: 60px; height: 50px; background: var(--color-white); border-radius: 8px; font-size: 1.2rem; box-shadow: var(--shadow-soft);">◀</button>
+                    <button class="btn-dir down" id="btn-down" style="width: 60px; height: 50px; background: var(--color-white); border-radius: 8px; font-size: 1.2rem; box-shadow: var(--shadow-soft);">▼</button>
+                    <button class="btn-dir right" id="btn-right" style="width: 60px; height: 50px; background: var(--color-white); border-radius: 8px; font-size: 1.2rem; box-shadow: var(--shadow-soft);">▶</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="src/core/Game.js"></script>
+</body>
+</html>
