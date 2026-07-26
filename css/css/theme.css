@@ -1,0 +1,27 @@
+:root {
+    --color-white: #FFFFFF;
+    --color-soft-pink: #FFD1DC;
+    --color-lotus: #FFB7C5;
+    --color-light-purple: #E6E6FA;
+    --color-blue: #AEC6CF;
+    --color-mint: #98FF98;
+    --color-turquoise: #40E0D0;
+    --color-beige: #F5F5DC;
+    --color-gold: #FFD700;
+
+    --color-text-dark: #4A4A4A;
+    --color-text-light: #FAFAFA;
+    --color-error: #FF6B6B;
+    
+    --bg-main: linear-gradient(135deg, var(--color-soft-pink), var(--color-light-purple));
+    --bg-panel: rgba(255, 255, 255, 0.85);
+
+    --shadow-soft: 0 8px 16px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 15px var(--color-lotus);
+    
+    --border-radius-lg: 20px;
+    --border-radius-md: 12px;
+    --border-radius-sm: 8px;
+    
+    --font-main: 'Nunito', 'Segoe UI', Tahoma, sans-serif;
+}
